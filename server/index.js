@@ -15,6 +15,10 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static(path.resolve(__dirname, 'static')))
 app.use(fileUpload({}))
+app.use('/', (res, req)=>{
+    res.send('Server is working')
+})
+
 app.use('/api', router)
 
 // Обработка ошибок, последний Middleware
